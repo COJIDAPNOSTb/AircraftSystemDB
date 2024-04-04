@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.aircraftsystem.QueryController">
+  <tabs>
+    <Tab text="Сортировка по ремонту">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="298.0" prefWidth="450.0">
+               <children>
+                  <TextField fx:id="query_repair_field" layoutX="282.0" layoutY="51.0" prefHeight="26.0" prefWidth="83.0" />
+                  <Button fx:id="query_repairresult_button" layoutX="22.0" layoutY="123.0" mnemonicParsing="false" onAction="#addQueryRepair" prefHeight="26.0" prefWidth="445.0" text="Результат" />
+                  <Label layoutX="376.0" layoutY="55.0" text="лет." />
+                  <Label layoutX="15.0" layoutY="30.0" text="Выдать список самолетов и их характеристики, у которых дата" />
+                  <Label layoutX="16.0" layoutY="55.0" prefHeight="18.0" prefWidth="260.0" text=" последнего капитального ремонта превысила" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Х-ки самолета">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="30.0" prefHeight="18.0" prefWidth="456.0" text="Выдать список самолетов и их характеристики, которые могут обслуживать  рейс." />
+                  <TextField fx:id="query_aircraft_field" layoutX="60.0" layoutY="87.0" />
+                  <Label layoutX="15.0" layoutY="90.0" prefHeight="18.0" prefWidth="55.0" text="Рейс:" />
+                  <Button fx:id="query_airresult_field" layoutX="224.0" layoutY="178.0" mnemonicParsing="false" onAction="#addQueryAircraft" text="Button" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Сортировка по рейсам">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="30.0" text="Выдать список рейсов, которые совершат посадку в данном пункте" />
+                  <Label layoutX="15.0" layoutY="90.0" prefHeight="18.0" prefWidth="45.0" text="Пункт:" />
+                  <TextField fx:id="query_point_field" layoutX="70.0" layoutY="87.0" />
+                  <Button fx:id="query_pointresult_button" layoutX="202.0" layoutY="169.0" mnemonicParsing="false" onAction="#addQueryFlight" text="Button" />
+               </children></AnchorPane>
+          </content>
+      </Tab>
+      <Tab text="Отчет">
+          <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="15.0" layoutY="30.0" text="Выдать информацию о летном составе, обслуживающем определнный тип самолета" />
+                  <Label layoutX="15.0" layoutY="90.0" text="Тип самолета" />
+                  <ComboBox fx:id="query_final_box" layoutX="101.0" layoutY="86.0" prefWidth="150.0" />
+                  <Button fx:id="qury_finalresult_button" layoutX="200.0" layoutY="180.0" mnemonicParsing="false" onAction="#addQueryResult" text="Button" />
+               </children></AnchorPane>
+          </content>
+      </Tab>
+  </tabs>
+</TabPane>

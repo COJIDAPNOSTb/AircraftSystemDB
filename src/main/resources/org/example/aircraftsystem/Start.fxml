@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="main_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.aircraftsystem.StartController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane layoutY="-1.0" prefHeight="25.0" prefWidth="1000.0">
+               <children>
+                  <Button fx:id="exit_button" layoutX="960.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="40.0" text="X" />
+                  <Button fx:id="hide_button" layoutX="920.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="40.0" text="_" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="25.0" prefHeight="578.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="query_button" layoutY="504.0" mnemonicParsing="false" onAction="#query_window" prefHeight="73.0" prefWidth="200.0" text="Мастер запросов" />
+                  <Button fx:id="flight_table_button" layoutY="259.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="200.0" text="Таблица рейсов" />
+                  <Button fx:id="aircraft_table_button" layoutY="194.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="200.0" text="Таблица самолетов" />
+                  <Button fx:id="personal_table_button" layoutY="127.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="59.0" prefWidth="200.0" text="Таблица пилотов" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="200.0" layoutY="25.0" prefHeight="577.0" prefWidth="800.0">
+               <children>
+                  <AnchorPane fx:id="personal_form" prefHeight="577.6" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="personal_table" layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="775.0">
+                          <columns>
+                            <TableColumn fx:id="personal_id_col" prefWidth="75.0" text="Код" />
+                            <TableColumn fx:id="personal_name_col" prefWidth="204.0" text="ФИО" />
+                              <TableColumn fx:id="personal_rank_col" prefWidth="137.5999755859375" text="Звание" />
+                              <TableColumn fx:id="personal_job_col" prefWidth="117.99993896484375" text="Должность" />
+                              <TableColumn fx:id="personal_aircrafttype_col" prefWidth="133.79998779296875" text="Тип самолета" />
+                              <TableColumn fx:id="personal_hours_col" prefWidth="109.79998779296875" text="Часы" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="personal_redactor_button" layoutX="590.0" layoutY="490.0" mnemonicParsing="false" onAction="#personal_redact" prefHeight="75.0" prefWidth="200.0" text="Мастер редактирования" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="aircraft_form" prefHeight="577.6" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="aircraft_table" layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="775.0">
+                          <columns>
+                            <TableColumn fx:id="aircraft_id_col" prefWidth="131.1999969482422" text="Номер самолета" />
+                            <TableColumn fx:id="aircraft_type_col" prefWidth="138.39996337890625" text="Тип самолета" />
+                              <TableColumn fx:id="aircraft_hour_col" prefWidth="172.60000610351562" text="Количество часов" />
+                              <TableColumn fx:id="aircraft_date_col" prefWidth="161.79998779296875" text="Последняя дата ремонта" />
+                              <TableColumn fx:id="aircraft_flightid_col" prefWidth="174.60003662109375" text="Номер рейса" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="aircraft_redactor_button" layoutX="590.0" layoutY="490.0" mnemonicParsing="false" onAction="#aircraft_redact" prefHeight="75.0" prefWidth="200.0" text="Мастер редактирования" />
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="flight_form" prefHeight="577.6" prefWidth="800.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="flight_table" layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="775.0">
+                          <columns>
+                            <TableColumn fx:id="flight_flightid_col" prefWidth="114.19999694824219" text="Номер рейса" />
+                            <TableColumn fx:id="flight_lastpoint_col" prefWidth="116.39999389648438" text="Конечный пункт" />
+                              <TableColumn fx:id="flight_startdate_col" prefWidth="119.20001220703125" text="Время вылета" />
+                              <TableColumn fx:id="flight_flightdate_col" prefWidth="109.5999755859375" text="Время полета" />
+                              <TableColumn fx:id="flight_middlepoint_col" prefWidth="172.5999755859375" text="Промежуточные посадки" />
+                              <TableColumn fx:id="flight_aircrafttype_col" prefWidth="153.5999755859375" text="Тип самолета" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="flight_redactor_button" layoutX="590.0" layoutY="490.0" mnemonicParsing="false" onAction="#flight_redact" prefHeight="75.0" prefWidth="200.0" text="Мастер редактирования" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
